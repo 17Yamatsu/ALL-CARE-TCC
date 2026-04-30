@@ -6,10 +6,10 @@ CREATE TABLE usuario (
 	usr_id int primary key auto_increment,
 	usr_name VARCHAR(120) not null,
     usr_mail VARCHAR(120) not null,
-    usr_birhday date not null,
-    usr_cpf int not null,
+    usr_birthday date not null,
+    usr_cpf varchar(11) not null,
     usr_address varchar(300) not null,
-    usr_cep int not null,
+    usr_cep varchar(8) not null,
     usr_type ENUM("Paciente", "Usuário") default("Usuário"),
     usr_pwd VARCHAR(16) not null,
     usr_photo mediumblob,
@@ -20,7 +20,7 @@ create table paciente (
 	pac_id int primary key auto_increment,
 	pac_name varchar(120) not null,
     pac_address varchar(300) not null,
-    pac_cpf int not null,
+    pac_cpf varchar(11) not null,
     pac_birthday date not null,
     pac_medicalinfo varchar(700) not null
 );
@@ -33,5 +33,3 @@ create table pac_usr (
     foreign key (FK_usr) references usuario(usr_id),
     foreign key (FK_pac) references paciente(pac_id)
 );
-
-drop table usuario;
