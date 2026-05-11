@@ -4,8 +4,8 @@ import connection from '../config/db.js'
 export const createUser = (data, res) => {
     const sql = `
         INSERT INTO usuario 
-        (usr_name, usr_mail, usr_birthday, usr_cpf, usr_address, usr_cep, usr_type, usr_pwd, usr_medicalinfo)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        (usr_name, usr_mail, usr_birthday, usr_cpf, usr_address, usr_cep, usr_type, usr_pwd)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `
 
     connection.query(sql, Object.values(data), (err, result) => {
@@ -72,6 +72,7 @@ export const getUsers = (res) => {
         res.json(results)
     })
 }
+
 // Deletar (DELETE)
 export const deleteUser = (id, res) => {
     const sql = `DELETE FROM usuario WHERE usr_id=?`
