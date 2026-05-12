@@ -13,7 +13,7 @@ CREATE TABLE usuario (
     usr_type ENUM("Paciente", "Usuário") default("Usuário"),
     usr_pwd VARCHAR(16) not null,
     usr_photo mediumblob,
-    usr_medicalinfo varchar(700) not null
+    --  vusr_medicalinfoarchar(700) not null
 );
 
 create table paciente (
@@ -22,7 +22,7 @@ create table paciente (
     pac_address varchar(300) not null,
     pac_cpf varchar(11) not null,
     pac_birthday date not null,
-    pac_medicalinfo varchar(700) not null
+    -- pac_medicalinfo varchar(700) not null
 );
 
 
