@@ -1,3 +1,4 @@
+// src/services/api.js
 export const loginUser = async (email, password) => {
   try {
     const response = await fetch('http://localhost:8001/usuarios');
@@ -12,7 +13,6 @@ export const loginUser = async (email, password) => {
         user.usr_mail === email.trim() &&
         user.usr_pwd === password.trim()
     );
-
   } catch (error) {
     console.error('Erro na API:', error);
     return null;
