@@ -62,16 +62,7 @@ export default function CreatePasswordScreen({
         throw new Error('Erro ao cadastrar.');
       }
 
-      Alert.alert(
-        'Sucesso',
-        'Cadastro finalizado',
-        [
-          {
-            text: 'OK',
-            onPress: () => navigation.navigate('Login'),
-          },
-        ]
-      );
+      navigation.replace('Login');
 
     } catch (error) {
       console.log(error);
